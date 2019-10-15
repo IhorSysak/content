@@ -83,7 +83,7 @@ app.post('/register', (req, res) => {
 
   const url = DEV
     ? 'http://localhost:8080'
-    : 'https://arcane-shelf-55562.herokuapp.com'
+    : 'https://stark-springs-03070.herokuapp.com/'
   const html = `
     <div>
       <a href="${url}/confirm?token=${users[email].confirmationToken}">Підтвердити реєстрацію</a>
