@@ -78,10 +78,12 @@
                         <button id="register-modal-open" type="button">Register</button>
                         <button id="login-modal-open" type="button">Login</button>
 
+                        
                         <form id="modal-login" style="display: none">
                             <input type="email" placeholder="email" id="login-email">
                             <input type="password" placeholder="password" id="login-password">
                             <button type="submit">Login</button>
+
                         </form>
                         <form id="modal-register" style="display: none">
                             <input type="email" placeholder="email" id="register-email">
@@ -89,6 +91,11 @@
                             <button type="submit">Register</button>
                         </form>
                         <h3 id="errors"></h3>
+                        <button id="forgot-pass-open">Forgot password:</button>
+                        <form id="modal-forgot-pass" style="display: none;">
+                            <input type="email" id="forgot-pass-email">
+                            <button type="submit">Send me recovery e-mail</button>
+                        </form>
                         <!-- <div class="form-row">
                             <div id="subscription-form" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 form-input">
                                 <input type="email" class="form-control" placeholder="Enter a valid email adress">

@@ -73,9 +73,32 @@ $(function(){
     })
 
     $('#signout').click(function(e) {
-        console.log('awdawd')
+        // console.log('awdawd')
         document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
         location.replace('/')
+    })
+    
+    $('#forgot-pass-open').click(function() {
+        $('#modal-forgot-pass').toggle()
+    })
+    
+    $('#modal-forgot-pass').submit(function(e) {
+        e.preventDefault()
+        const email = $('#forgot-pass-email').val()
+        fetch('/recover', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+        }).then(res => {
+            if (res.status.toString()[0] !== '2')
+                return res.text().then(err => Promise.reject(err))
+            $('#forgot-pass-email').val('')
+            alert('Email sent successfully')
+        }).catch(err => {
+            $('#errors').text(err)
+        })
     })
 });
 
