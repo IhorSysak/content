@@ -183,9 +183,11 @@ app.post('/recover', (req, res) => {
     (err, info) => {
       if (err) {
         console.error(err, 'E-Mail sending failed')
+        res.status(500).end('Faild to send email')
         return
       }
       console.log('E-Mail sent successfully')
+      res.status(200).end()
     }
   )
 })
